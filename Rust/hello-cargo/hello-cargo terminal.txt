@@ -1,0 +1,14 @@
+@:Rust U$ cargo new hello-cargo
+     Created binary (application) `hello-cargo` package
+@:Rust U$ cd hello-cargo/
+@:hello-cargo U$ ls
+Cargo.toml	src
+@:hello-cargo U$ cargo check
+    Checking hello-cargo v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/hello-cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.11s
+@:hello-cargo U$ cargo run
+   Compiling hello-cargo v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/hello-cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.68s
+     Running `target/debug/hello-cargo`
+Hello, world!
+@:hello-cargo U$ 

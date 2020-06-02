@@ -1,0 +1,73 @@
+@:guessing-game U$ cargo build
+    Blocking waiting for file lock on package cache
+    Updating crates.io index
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling libc v0.2.71
+   Compiling rand_core v0.4.2
+   Compiling rand_core v0.3.1
+   Compiling rand v0.5.6
+   Compiling guessing-game v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/guessing-game)
+    Finished dev [unoptimized + debuginfo] target(s) in 8.65s
+@:guessing-game U$ cargo run
+   Compiling guessing-game v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/guessing-game)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.41s
+     Running `target/debug/guessing-game`
+Welcome to the number guessing game
+The secret number is: 5
+Please input your guess
+10
+You guessed: 10
+
+@:guessing-game U$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/guessing-game`
+Welcome to the number guessing game
+The secret number is: 73
+Please input your guess
+73
+You guessed: 73
+
+@:guessing-game U$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/guessing-game`
+Welcome to the number guessing game
+The secret number is: 34
+Please input your guess
+1
+You guessed: 1
+
+@:guessing-game U$ cargo run
+   Compiling guessing-game v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/guessing-game)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.45s
+     Running `target/debug/guessing-game`
+Welcome to the number guessing game
+Please input your guess
+50
+You guessed: 50
+Too big
+Please input your guess
+25
+You guessed: 25
+Too small
+Please input your guess
+30
+You guessed: 30
+Too small
+Please input your guess
+40
+You guessed: 40
+Too big
+Please input your guess
+35
+You guessed: 35
+Too big
+Please input your guess
+33
+You guessed: 33
+Too big
+Please input your guess
+32
+You guessed: 32
+You win!
+@:guessing-game U$ 

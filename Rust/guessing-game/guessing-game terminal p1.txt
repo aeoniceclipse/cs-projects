@@ -1,0 +1,20 @@
+@:Rust U$ cargo new guessing-game
+     Created binary (application) `guessing-game` package
+@:Rust U$ cd guessing-game/
+@:guessing-game U$ ls
+Cargo.toml	src
+@:guessing-game U$ cargo run
+   Compiling guessing-game v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/guessing-game)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.29s
+     Running `target/debug/guessing-game`
+Hello, world!
+@:guessing-game U$ cargo run
+   Compiling guessing-game v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/guessing-game)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.75s
+     Running `target/debug/guessing-game`
+Welcome to the number guessing game
+Please input your guess
+3
+You guessed: 3
+
+@:guessing-game U$ 

@@ -1,0 +1,24 @@
+@:Rust U$ rustc hello-world.rs
+@:Rust U$ ./hello-world
+Hello world
+@:Rust U$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

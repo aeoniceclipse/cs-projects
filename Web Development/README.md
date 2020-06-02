@@ -1,5 +1,5 @@
 # Web Development
-Progression Record
+ Progression Record
 
 This is meant to record my learning progress in web development.
 
