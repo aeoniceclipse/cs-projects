@@ -1,0 +1,71 @@
+@:Rust U$ cargo new variables
+     Created binary (application) `variables` package
+@:Rust U$ cd variables/
+@:variables U$ cargo run
+   Compiling variables v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.68s
+     Running `target/debug/variables`
+The value of x is: 5
+The value of x is: 6
+@:variables U$ cargo run
+   Compiling variables v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.62s
+     Running `target/debug/variables`
+The value of x is: 5
+The value of x is: 6
+The value of y is: 8
+@:variables U$ cargo run
+   Compiling variables v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
+     Running `target/debug/variables`
+The value of x is: 5
+The value of x is: 6
+The value of y is: 8
+@:variables U$ cargo run
+   Compiling variables v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/variables)
+warning: function is never used: `secondary`
+  --> src/main.rs:17:4
+   |
+17 | fn secondary() {
+   |    ^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+    Finished dev [unoptimized + debuginfo] target(s) in 0.66s
+     Running `target/debug/variables`
+The value of x is: 5
+The value of x is: 6
+The value of y is: 8
+The constant value is: 10
+@:variables U$ cargo run
+   Compiling variables v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/variables)
+error[E0425]: cannot find value `VALUE` in this scope
+  --> src/main.rs:15:47
+   |
+15 |         println!("The constant value is: {}", VALUE);
+   |                                               ^^^^^ not found in this scope
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `variables`.
+
+To learn more, run the command again with --verbose.
+@:variables U$ cargo run
+   Compiling variables v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.57s
+     Running `target/debug/variables`
+The value of x is: 5
+The value of x is: 6
+The value of y is: 8
+The constant value is: 10
+@:variables U$ cargo run
+   Compiling variables v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.61s
+     Running `target/debug/variables`
+The value of x is: 5
+The value of x is: 6
+The value of y is: 8
+The constant value is: 10
+7
+@:variables U$ 

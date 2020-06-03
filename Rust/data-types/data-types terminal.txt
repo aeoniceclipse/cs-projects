@@ -1,0 +1,30 @@
+@:Rust U$ cargo new data-types
+     Created binary (application) `data-types` package
+@:Rust U$ cd data-types/
+@:data-types U$ cargo run
+   Compiling data-types v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/data-types)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.43s
+     Running `target/debug/data-types`
+The values of x, y, and z are: -10, 10, and ten
+@:data-types U$ cargo run
+   Compiling data-types v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/data-types)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.33s
+     Running `target/debug/data-types`
+The values of x, y, and z are: -10, 10, and ten
+@:data-types U$ cargo run
+   Compiling data-types v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/data-types)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.33s
+     Running `target/debug/data-types`
+The values of x, y, and z are: -10, 10, and ten
+tup consists of -10, 10, and ten
+@:data-types U$ cargo run
+   Compiling data-types v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/data-types)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.42s
+     Running `target/debug/data-types`
+The values of x, y, and z are: -10, 10, and ten
+tup consists of -10, 10, and ten
+First arr is 1
+First rep is 1
+1 10 100 1000 10000 100000
+1 1 1 1 1 1 1 1 1 1
+@:data-types U$ 
