@@ -1,0 +1,43 @@
+@:Rust U$ cargo new functions
+     Created binary (application) `functions` package
+@:Rust U$ cd functions/
+@:functions U$ cargo run
+   Compiling functions v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/functions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.23s
+     Running `target/debug/functions`
+Main
+Secondary
+@:functions U$ cargo run
+   Compiling functions v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/functions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.35s
+     Running `target/debug/functions`
+Main
+Secondary, 2
+@:functions U$ cargo run
+   Compiling functions v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/functions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.26s
+     Running `target/debug/functions`
+Main
+Secondary/2
+main is 1, secondary is 2, tertiary is 3
+6
+@:functions U$ cargo run
+   Compiling functions v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/functions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.24s
+     Running `target/debug/functions`
+Main
+Secondary/2
+main is 1, secondary is 2, tertiary is 3
+6
+4
+5
+@:functions U$ cargo run
+   Compiling functions v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/functions)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.23s
+     Running `target/debug/functions`
+Main
+Secondary/2
+main is 1, secondary is 2, tertiary is 3
+4
+5
+@:functions U$ 
