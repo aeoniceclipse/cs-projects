@@ -1,0 +1,29 @@
+@:Rust U$ cargo new owners
+     Created binary (application) `owners` package
+@:Rust U$ cd owners/
+@:owners U$ cargo run
+   Compiling owners v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/owners)
+warning: unused variable: `a`
+  --> src/main.rs:37:13
+   |
+37 |         let a = gives(); // moves its return into a
+   |             ^ help: consider prefixing with an underscore: `_a`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `c`
+  --> src/main.rs:41:13
+   |
+41 |         let c = taketogive(b); // b moved and returned
+   |             ^ help: consider prefixing with an underscore: `_c`
+
+    Finished dev [unoptimized + debuginfo] target(s) in 1.05s
+     Running `target/debug/owners`
+Hello text
+owner
+owner
+2
+return
+borrow
+The length of owner is 5
+@:owners U$ 
