@@ -1,0 +1,43 @@
+@:Rust U$ cargo new slices
+     Created binary (application) `slices` package
+@:Rust U$ cd slices/
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.81s
+     Running `target/debug/slices`
+b bo boo boop
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.33s
+     Running `target/debug/slices`
+b
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.27s
+     Running `target/debug/slices`
+b 
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.27s
+     Running `target/debug/slices`
+b b
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.26s
+     Running `target/debug/slices`
+b bo
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.35s
+     Running `target/debug/slices`
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.35s
+     Running `target/debug/slices`
+testing
+@:slices U$ cargo run
+   Compiling slices v0.1.0 (/Users/U/Documents/Files/Projects/Code/Github/Learning/Rust/slices)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.34s
+     Running `target/debug/slices`
+first
+@:slices U$ 
