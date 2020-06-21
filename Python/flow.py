@@ -30,3 +30,19 @@ if num1 == num2 or num1 == 1:
 
 if num1 in lst:
 	print("is")
+
+for x in lst:
+	print(x)
+
+for x in range(0, 5, 2):
+	print(x)
+
+count = 0
+while count < 5:
+	print(lst[count:])
+	count += 1
+
+for x in range(10):
+	if x % 2 == 0:
+		continue
+	print(x)
