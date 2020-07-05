@@ -2,9 +2,9 @@ public class Minesweeper {
 	public static void main(String[] args) {
 		int it = 0;
 		int ix;
-		int x = Integer.parseInt(args[0]);
+		int x = Integer.parseInt(args[1]);
 		int iy;
-		int y = Integer.parseInt(args[1]);
+		int y = Integer.parseInt(args[0]);
 		int[][] xy = new int[x + 2][y + 2];
 		int m = Integer.parseInt(args[2]);
 		boolean[][] r = new boolean[x + 2][y + 2];
