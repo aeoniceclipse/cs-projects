@@ -9,7 +9,7 @@ public class Minesweeper {
 		int m = Integer.parseInt(args[2]);
 		boolean[][] r = new boolean[x + 2][y + 2];
 
-		do {
+		while (it < m && m <= (x * y)) {
 			int rx = (int) ((Math.random() * x) + 1);
 			int ry = (int) ((Math.random() * y) + 1);
 
@@ -18,7 +18,7 @@ public class Minesweeper {
 				xy[rx][ry] = 10;
 				it ++;
 			} else continue;
-		} while (it < m);
+		}
 
 		for (iy = 1; iy <= y; iy ++) {
 			for (ix = 1; ix <= x; ix ++) {
