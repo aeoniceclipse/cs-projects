@@ -1,0 +1,203 @@
+#!/bin/bash
+
+###        Variables
+
+# set low and high range of VMIDs to allow changing from/to
+rangelow=100;
+rangehigh=254;
+# set vm .conf and disk file directories
+confs="/etc/pve/qemu-server";
+vols=("/dev/e-data" "/dev/w-data");
+# set maximum number of vm disks per vm to look for (vm disks in use per any vm should be less)
+maxdsks=5;
+# set confirmation prompt timeout
+timeout=10;
+
+###        Functions
+
+arg1()     #check if first arg is in range
+  {
+   if [[ " ${ids[*]} " = *" ${args[0]} "* ]]; then
+        arg2;
+        else
+           printf %b "\t\t\tCheck VMID(s)\n";
+           exit;
+        fi;
+  }
+
+arg2()     # check if second arg is in range and unique
+  {
+   if [[ " ${ids[*]} " = *" ${args[1]} "* ]]; then
+        if [[ " ${args[1]} " != " ${args[0]} " ]]; then
+           conf1;
+           else
+              printf %b "\t\t\tNo change\n";
+              exit;
+           fi;
+        else
+           printf %b "\t\t\tCheck VMID(s)\n";
+           exit;
+        fi;
+  }
+
+conf1()    # check if file1 exists
+  {
+   if [[ -f "$confs/${args[0]}.conf" ]]; then
+        conf2;
+        else
+           printf %b "\t\t\t${args[0]}.conf non-existent\n";
+           exit;
+        fi;
+  }
+
+conf2()    # check if file2 exists
+  {
+   if [[ -f "$confs/${args[1]}.conf" ]]; then
+        printf %b "\t\t\t${args[1]}.conf already exists\n";
+        exit;
+        else
+           dskvol1 $vols;
+        fi;
+  }
+
+dskvol1()  # check if old disk(s) exist(s)
+  {
+   if [[ $type == "disk" ]]; then
+        for (( odv=0; $odv<=$#; odv++ )) do
+           for (( dcount=0; $dcount<$maxdsks; dcount++ )); do
+              if [[ -e "${vols[$odv]}/vm-${args[0]}-disk-$dcount" ]]; then
+                odsks+=("${vols[$odv]}/vm-${args[0]}-disk-$dcount");
+                else
+                    break;
+                fi;
+              done;
+           done;
+        if [[ -n "${odsks[0]}" ]]; then
+           cdv1max $odsks;
+           else
+              printf %b "\t\t\tDisk(s) non-existent\n";
+              exit;
+           fi;
+        else
+           check;
+        fi;
+  }
+
+cdv1max()  # warn if max disk check limit reached
+  {
+   if [[ $# == $maxdsks ]]; then
+        printf %b "\t\t\tWARNING: Ensure max disk check is sufficient\n";
+        exit;
+        else
+           dskvol2 $vols;
+        fi;
+  }
+
+dskvol2()  # check if new disk(s) exist(s)
+  {
+   for (( ndv=0; $ndv<=$#; ndv++ )) do
+        for (( dcount=0; $dcount<$maxdsks; dcount++ )); do
+           if [[ -e "${vols[$ndv]}/vm-${args[1]}-disk-$dcount" ]]; then
+              ndsks+=("${vols[$ndv]}/vm-${args[1]}-disk-$dcount");
+              else
+                break;
+              fi;
+           done;
+        done;
+   if [[ -n "${ndsks[0]}" ]]; then
+        printf %b "\t\t\tDisk(s) already exist(s)\n";
+        exit;
+        else
+           dsks $vols;
+           check;
+        fi;
+  }
+
+dsks()     # create array of vm disks
+  {
+   for (( dv=0; $dv<=$#; dv++ )) do
+        for (( dcount=0; $dcount<$maxdsks; dcount++ )); do
+           if [[ -e "${vols[$dv]}/vm-${args[0]}-disk-$dcount" ]]; then
+              ndsks+=("${vols[$dv]}/vm-${args[1]}-disk-$dcount");
+              else
+                break;
+              fi;
+           done;
+        done;
+  }
+
+check()    # list pending changes
+  {
+   printf %b "\t\t\tPending changes:\n\n";
+   printf %b "\t\t\tvm .conf files\n";
+   printf %b "\t\t\tOld:\t$confs/${args[0]}.conf\n";
+   printf %b "\t\t\tNew:\t$confs/${args[1]}.conf\n\n\t\t\t";
+   if [[ $type == "disk" ]]; then
+        printf %b "\t\t\tvm disk files\n";
+        printf %b "\t\t\tOld:\t${odsks[*]}\n";
+        printf %b "\t\t\tNew:\t${ndsks[*]}\n\n\t\t\t";
+        fi;
+   prompt;
+  }
+
+prompt()   # prompt for confirmation
+  {
+   read -t $timeout -p "Continue? [y/N]: " answer;
+   case $answer in
+        Y | y )
+           change $odsks;;
+        N | n | "" )
+           printf %b "\t\t\tNo change\n";
+           exit;;
+        * )
+           prompt;;
+        esac;
+  }
+
+change()   # complete pending changes
+  {
+   mv "$confs/${args[0]}.conf" "$confs/${args[1]}.conf";
+   if [[ $type == "disk" ]]; then
+        sed -E -i "s/(.*)(vm-)(${args[0]})(-disk)(.*)/\1\2${args[1]}\4\5/" $confs/${args[1]}.conf;
+        for (( chg=0; $chg<$#; chg++ )); do
+           lvrename "${odsks[$chg]}" "${ndsks[$chg]}";
+           done;
+        fi;
+   printf %b "\t\t\tChanges completed\n";
+   exit;
+  }
+
+help()     # help info
+  {
+   printf %b "\t\t\tChanges Proxmox VMID\n\n";
+   printf %b "\t\t\tOptions:\n";
+   printf %b "\t\t\t-d, --diskless\n";
+   printf %b "\t\t\t\t\t\tSkip disk check/change for diskless machines or as desired\n\n"
+  }
+
+###        Main
+
+# create cli argument arrays
+oargs=($@);
+args=($@);
+# create id range array
+ids=$(seq -s " " $rangelow $rangehigh);
+
+if [[ "${args[0]}" == "-h" || "${args[0]}" == "--help" ]]; then
+  help;
+  exit;
+  elif [[ 1 < $# && $# < 4 ]]; then
+   if [[ "${args[0]}" == "-d" || "${args[0]}" == "--diskless" ]]; then
+        type="diskless"
+        args=("${oargs[1]}" "${oargs[2]}");
+        arg1;
+        elif [[ -z ${args[2]} ]]; then
+           type="disk"
+           arg1;
+        else
+           printf %b "\t\t\tCheck parameters\n";
+        fi;
+  else
+   help;
+   exit;
+  fi;
