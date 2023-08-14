@@ -1,5 +1,4 @@
-# cs-projects
-Computer Projects
+# Computer Projects
 
 This is meant to record my learning progress in my technological interests.
 
