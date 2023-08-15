@@ -1,1 +1,0 @@
-This script changes the VM IDs of Proxmox virtual machines as there is [currently] no existing tool to do so. I am working on a fuller version to cover more use-cases and options.
