@@ -1,8 +1,5 @@
 # Rust
- Progression Record
 
-This is meant to record my learning progress in Rust.
+I became interested in Rust some years ago from hearing it was a newer and safer language. It seemed to be becoming popular [according to the TIOBE index] at the time so I wanted to start learning it early. I also joined the developers' Discord to stay on top of the language.
 
-This folder [and further if applicable] can act, in a way, as a portfolio of my Rust programming, depending on learned topics. As I am self-directed, some files may be incomplete or disorganized as I move through concepts; there may be skipped or added content [from what may be expected] based on my knowledge and experimentation levels.
-
-Starting content was created by following the book material from rust-lang.org.
+This was started by following the book material from rust-lang.org.
